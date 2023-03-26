@@ -1,52 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drown Victim Finder</title>
+    
+    <!-- Favicons -->
+    <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
+    <link href="{{url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            <h2>Search</h2>
+            <p>Drowned Victim Finder</p>
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+  
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info@example.com</p>
+                </div>
+  
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55s</p>
+                </div>
+  
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+  
+              <form method="post" enctype="multipart/form-data">
+                
+                <div class="form-group mt-3">
+                  <input type="file" class="form-control" name="file" id="inputfile" placeholder="Upload gambar" required>
+                </div>
+                <div class="text-center"><input type="submit" value="Detect"></input></div>
+              </form>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+
+<!-- Vendor JS Files -->
+<script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+<script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+<script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+<script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+<!-- Template Main JS File -->
+<script src="static/assets/js/main.js"></script>
+
+<script type="text/javascript">
+  $('#inputfile').bind('change', function() {
+      let fileSize = this.files[0].size/1024/1024; // this gives in MB
+      if (fileSize > 1) {
+        $("#inputfile").val(null);
+        alert('file is too big. images more than 1MB are not allowed')
+        return
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+      if($.inArray(ext, ['jpg','jpeg']) == -1) {
+        $("#inputfile").val(null);
+        alert('only jpeg/jpg files are allowed!');
       }
-    </style>
-    <link rel="stylesheet" href="/static/style.css">
+  });
+</script>
 
-    <title>yolov5 object detection | Pyresearch</title>
-  </head>
-  <body class="text-center">
-    <form class="form-signin" method=post enctype=multipart/form-data>
-        <img class="mb-4" src="/static/3.png" alt="" width="72">
-        <h1 class="h3 mb-3 font-weight-normal">Upload any image</h1>
-        <input type="file" name="file" class="form-control-file" id="inputfile">
-        <br/>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-        <p class="mt-5 mb-3 text-muted">Pyresearch</p>
-    </form>
-    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      $('#inputfile').bind('change', function() {
-          let fileSize = this.files[0].size/1024/1024; // this gives in MB
-          if (fileSize > 1) {
-            $("#inputfile").val(null);
-            alert('file is too big. images more than 1MB are not allowed')
-            return
-          }
-
-          let ext = $('#inputfile').val().split('.').pop().toLowerCase();
-          if($.inArray(ext, ['jpg','jpeg']) == -1) {
-            $("#inputfile").val(null);
-            alert('only jpeg/jpg files are allowed!');
-          }
-      });
-    </script>
-  </body>
+</body>
 </html>
