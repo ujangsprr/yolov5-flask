@@ -28,3 +28,6 @@ Simple app consisting of a form where you can upload an image, and see the infer
 
 then visit http://localhost:5000/ in your browser:
 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
