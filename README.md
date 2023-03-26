@@ -28,6 +28,6 @@ Simple app consisting of a form where you can upload an image, and see the infer
 
 then visit http://localhost:5000/ in your browser:
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/Screenshot%20from%202023-03-27%2001-55-45.png?raw=true)
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/Screenshot%20from%202023-03-27%2001-56-04.png?raw=true)
