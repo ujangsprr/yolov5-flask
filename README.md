@@ -29,6 +29,6 @@ python3 app.py --port 5000
 
 then visit http://localhost:5000/ in your browser:
 
-![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/Screenshot%20from%202023-03-27%2001-55-45.png?raw=true)
+![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/screen1.png?raw=true)
 
-![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/Screenshot%20from%202023-03-27%2020-19-51.png?raw=true)
+![alt text](https://github.com/ujangsprr/yolov5-flask/blob/master/docs/screen2.png?raw=true)
