@@ -23,7 +23,7 @@ def predict():
 
         results.render()  # updates results.imgs with boxes and labels
 
-        img_savename = f"static/image/image0.jpg"
+        img_savename = f"static/image/result.jpg"
         Image.fromarray(results.ims[0]).save(img_savename)
 
         return redirect('/result')
@@ -32,7 +32,7 @@ def predict():
 
 @app.route("/result")
 def result():
-    full_filename = os.path.join('static', 'image/image0.jpg')
+    full_filename = os.path.join('static', 'image/result.jpg')
     return render_template("result.html", result_image = full_filename)
 
 if __name__ == "__main__":
